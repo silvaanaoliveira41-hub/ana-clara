@@ -1,0 +1,121 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg, #1565c0, #42a5f5);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* Área principal centralizada */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Cards */
+.form-section,
+.resultado-section {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.form-section:hover,
+.resultado-section:hover {
+    transform: translateY(-3px);
+}
+
+/* Títulos */
+h2 {
+    color: #1976d2;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #bbdefb;
+    padding-bottom: 5px;
+}
+
+/* Labels */
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #bbdefb;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 8px rgba(25,118,210,0.2);
+    outline: none;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(90deg, #1e88e5, #42a5f5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1565c0, #1e88e5);
+}
+
+/* Resultado */
+#resultado {
+    background: #f1f8ff;
+    border-left: 6px solid #1e88e5;
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+/* Rodapé */
+footer {
+    background: #b71c1c; /* vermelho forte */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
