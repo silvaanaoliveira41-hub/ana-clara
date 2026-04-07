@@ -1,0 +1,41 @@
+-- Remoção na ordem correta
+DROP TABLE IF EXISTS VISUALIZACAO;
+DROP TABLE IF EXISTS USUARIO;
+DROP TABLE IF EXISTS FILME;
+DROP TABLE IF EXISTS PLANO;
+
+-- Tabela de planos
+CREATE TABLE PLANO (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    qualidade VARCHAR(50)
+);
+
+-- Tabela de usuários
+CREATE TABLE USUARIO (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    data_nascimento DATE,
+    plano_id INTEGER NOT NULL,
+    FOREIGN KEY (plano_id) REFERENCES PLANO(id)
+);
+
+-- Tabela de filmes
+CREATE TABLE FILME (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    genero VARCHAR(50),
+    duracao INTEGER
+);
+
+-- Histórico de visualização
+CREATE TABLE VISUALIZACAO (
+    usuario_id INTEGER,
+    filme_id INTEGER,
+    data_hora TIMESTAMP NOT NULL,
+    PRIMARY KEY (usuario_id, filme_id, data_hora),
+    FOREIGN KEY (usuario_id) REFERENCES USUARIO(id),
+    FOREIGN KEY (filme_id) REFERENCES FILME(id)
+);

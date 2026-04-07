@@ -1,0 +1,55 @@
+DROP TABLE IF EXISTS MUSICA_USUARIO;
+DROP TABLE IF EXISTS MUSICA;
+DROP TABLE IF EXISTS ARTISTA;
+DROP TABLE IF EXISTS USUARIO;
+
+CREATE TABLE USUARIO(
+    login VARCHAR(20) PRIMARY KEY,
+    tipo VARCHAR(100),
+    nome VARCHAR(100)
+);
+
+CREATE TABLE ARTISTA(
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR NOT NULL, 
+    pais VARCHAR
+);
+
+CREATE TABLE MUSICA(
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255),
+    duracao INTEGER,
+    artista_id INTEGER,
+    FOREIGN KEY (artista_id) REFERENCES ARTISTA(id)
+);
+
+CREATE TABLE MUSICA_USUARIO(
+    id_musica INTEGER,
+    login VARCHAR(20),
+    FOREIGN KEY (id_musica) REFERENCES MUSICA(id),
+    FOREIGN KEY (login) REFERENCES USUARIO(login),
+    PRIMARY KEY (id_musica, login)
+);
+
+-- Inserindo artistas
+INSERT INTO ARTISTA (nome, pais)
+VALUES 
+    ('Enzo Rabelo', 'Brasil'),
+    ('Shawn Mendes', 'EUA'),
+    ('Tarde da Noite', 'Brasil');
+
+-- Inserindo músicas
+INSERT INTO MUSICA (titulo, duracao, artista_id)
+VALUES
+    ('Perfeitinha', 3, 1),
+    ('Meio caminho andado', 4, 1),
+    ('Itimalia', 4, 1);
+
+-- Inserindo usuários
+INSERT INTO USUARIO (login, tipo, nome)
+VALUES
+    ('biancarde', '', 'bianca'),
+    ('piu_pui', '', 'gabriela'), -- melhor sem espaço
+    ('amandita', '', 'amanda');
+-----------------------------------------------------------------------------
+SELECT * FROM ARTISTA
