@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: radial-gradient(circle at top, #141428, #05050a);
+    color: white;
+}
+
+/* topo */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.topbar button {
+    padding: 10px 15px;
+    border: none;
+    background: #7c5cff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* hero */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+/* cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #7c5cff;
+}
+
+/* cores das casas */
+.grif { border-left: 4px solid #ae0001; }
+.son  { border-left: 4px solid #1a472a; }
+.corv { border-left: 4px solid #0e1a40; }
+.lufa { border-left: 4px solid #ecb939; }
