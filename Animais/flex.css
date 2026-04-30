@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define o corpo como coluna (uma linha embaixo da outra) */
+body {
+    display: flex;
+    flex-direction: column; /* empilha as linhas */
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+/* Cada linha ocupa espaço igual */
+.linha {
+    display: flex; /* ativa flex */
+    flex: 1;       /* todas linhas com mesma altura */
+}
+
+/* Cada coluna ocupa espaço igual dentro da linha */
+.coluna {
+    flex: 1;
+    display: flex;
+    align-items: center;     /* centraliza vertical */
+    justify-content: center; /* centraliza horizontal */
+    border: 1px solid black;
+}
+
+/* ---------- LINHA 1 ---------- */
+.linha1 .coluna {
+    background: #6fd14c;
+}
+
+/* ---------- LINHA 2 ---------- */
+.linha2 .coluna {
+    background: #5f88d1;
+    color: white;
+}
+
+/* ---------- LINHA 3 ---------- */
+.linha3 .coluna:first-child {
+    background: #d88a6a;
+}
+
+/* coluna da direita com 3 itens */
+.coluna3-direita {
+    display: flex; /* itens lado a lado */
+}
+
+.coluna3-direita .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* imagem em cima, texto embaixo */
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- LINHA 4 ---------- */
+.linha4 {
+    background: #6fd1b0;
+}
+
+/* esquerda com imagens lado a lado */
+.coluna4-esquerda {
+    display: flex;
+}
+
+.coluna4-esquerda .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.coluna4-direita {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;          /* ocupa metade da linha */
+    min-width: 0;     /* evita "aperto" por conteúdo */
+
+    align-items: stretch; /* faz os filhos ocuparem toda largura */
+    justify-content: stretch;
+}
+
+/* cada metade ocupa metade da coluna */
+.coluna4-direita .metade {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%; /* garante largura total */
+    border: 1px solid black;
+}
+
+/* imagens padronizadas  em termos de tamanho*/
+img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Serif&display=swap');
+
+body {
+    background: linear-gradient(135deg, #2c3e50, #000);
+    font-family: 'Noto Serif', serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    color: #2c3e50;
+}
+
+/* Container */
+#documento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Folha estilo pergaminho */
+#folha {
+    background: linear-gradient(135deg, #fdf6e3, #f5e6c8);
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    border-radius: 10px;
+    border: 3px solid #d35400;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    position: relative;
+}
+
+/* Glow elemental */
+#folha::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #3498db, #2ecc71, #f1c40f, #e74c3c);
+    filter: blur(15px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #d35400;
+}
+
+/* Texto */
+p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Destaques */
+.dado-preenchido {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dado-destaque {
+    font-weight: bold;
+    background: #f1c40f;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+/* Assinatura */
+footer {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.linha {
+    border-top: 2px solid #000;
+    width: 300px;
+    margin: 10px auto;
+}
+
+/* Botões */
+.acoes {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-acao {
+    padding: 10px 20px;
+    background: #7f8c8d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-acao:hover {
+    background: #34495e;
+}
+
+.btn-imprimir {
+    background: #27ae60;
+}
+
+.btn-imprimir:hover {
+    background: #1e8449;
+}
+
+/* Impressão */
+@media print {
+    body { background: #fff; }
+    #folha { box-shadow: none; border: none; }
+    .acoes { display: none; }
+}
